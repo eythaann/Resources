@@ -1,20 +1,16 @@
-
-const CountWords = (text = "") => {
-  let dict = {};
+const CountWords = (text = '') => {
+  let dict = {}
   let separateWords = text
     .toLowerCase()
-    .replaceAll(/[,."()]/g, "")
-    .split(" ");
+    .replaceAll(/[,."()]/g, '')
+    .split(' ')
 
   for (let word of separateWords) {
-    if (dict[word]) {
-      ++dict[word];
-    } else {
-      dict[word] = 1;
-    }
+    if (dict[word]) dict[word]++
+    else dict[word] = 1
   }
 
-  return dict;
-};
+  return dict
+}
 
 export default CountWords
