@@ -1,6 +1,6 @@
-let arr = [0n, 1n];
+const arr = [0n, 1n];
 
-const fibo = (n) => {
+const fibo = (n: number) => {
   if (arr[n - 1] !== undefined) return arr[n - 1];
 
   for (let i = arr.length; i < n; i++) {
@@ -18,6 +18,5 @@ const factorial = (n: number): bigint => {
   return result;
 };
 
-
 console.log(fibo(100));
-console.log(factorial(50))
+console.log(factorial(50));

@@ -1,7 +1,7 @@
 class Node_bt {
   value: string
-  left: Node_bt
-  right: Node_bt
+  left: Node_bt | null = null;
+  right: Node_bt | null = null;
 
   add(newValue: string): void {
     if (newValue === this.value) throw new Error('No admit dupes')
@@ -19,11 +19,11 @@ class Node_bt {
     return false
   }
 
-  get(value: string): Node_bt {
+  get(value: string): Node_bt | undefined {
     if (value === this.value) return this
     if (value < this.value && this.left) return this.left.get(value)
     if (value > this.value && this.right) return this.right.get(value)
-    return null
+    return undefined
   }
 
   get isLeaf(): boolean {
